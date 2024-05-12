@@ -4,6 +4,7 @@ import getServers from '@/api/getServers';
 import ServerRow from '@/components/dashboard/ServerRow';
 import Spinner from '@/components/elements/Spinner';
 import PageContentBlock from '@/components/elements/PageContentBlock';
+import ServerSummary from './ServerSummary';
 import useFlash from '@/plugins/useFlash';
 import { useStoreState } from 'easy-peasy';
 import { usePersistedState } from '@/plugins/usePersistedState';
@@ -50,7 +51,8 @@ export default () => {
 
     return (
         <PageContentBlock title={'Dashboard'} showFlashKey={'dashboard'}>
-            {rootAdmin && (
+            <ServerSummary />
+            {/* {rootAdmin && (
                 <div css={tw`mb-2 flex justify-end items-center`}>
                     <p css={tw`uppercase text-xs text-neutral-400 mr-2`}>
                         {showOnlyAdmin ? "Showing others' servers" : 'Showing your servers'}
@@ -80,7 +82,7 @@ export default () => {
                         )
                     }
                 </Pagination>
-            )}
+            )} */}
         </PageContentBlock>
     );
 };

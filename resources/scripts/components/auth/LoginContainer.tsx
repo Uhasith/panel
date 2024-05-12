@@ -95,7 +95,7 @@ function LoginContainer() {
                             sitekey={siteKey || '_invalid_key'}
                             onVerify={response => {
                                 setToken(response);
-                                submitForm();
+                                setTimeout(() => submitForm(), 250);
                             }}
                             onExpire={() => {
                                 setSubmitting(false);
